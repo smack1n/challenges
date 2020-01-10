@@ -27,7 +27,7 @@ class slingChannels(unittest.TestCase):
         elements = self.driver.find_elements_by_xpath("/html/body/div[3]/div/div[2]/div/div[1]/div[2]/ul/section")
 
         number = len(elements)
-        print(number)
+        print("Number of subjects: ",number)
 
         for item in elements:
 

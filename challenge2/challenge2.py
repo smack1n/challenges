@@ -21,8 +21,6 @@ class challenge2(unittest.TestCase):
         self.driver.find_element_by_xpath("//div[2]/button").click()
         self.driver.find_element_by_xpath("//div[2]/button").send_keys(Keys.RETURN)
 
-        assert "No result" not in self.driver.page_source
-
         self.driver.implicitly_wait(10)
         result = self.driver.find_element_by_xpath("// *[text() = 'PORSCHE']").text
 
