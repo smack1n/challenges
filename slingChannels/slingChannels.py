@@ -10,6 +10,8 @@ class slingChannels(unittest.TestCase):
 
     def tearDown(self):
         self.driver.close()
+        print("")
+        print("Tear down")
 
     def test_slingChannels(self):
         self.driver.get("https://www.sling.com/")
@@ -21,8 +23,16 @@ class slingChannels(unittest.TestCase):
         number = len(elements)
 
         print("Number of channels in Orange pack: ", number)
-        for item in elements:
-            print(item.get_attribute("title"))
+        #for item in elements:
+         #   print(item.get_attribute("title"))
+
+        i = 0
+        while i < len(elements):
+            print(elements[i].text + " - " + elements[i].get_attribute("title"))
+
+            i += 1
+
+
 
 if __name__ == '__main__':
     unittest.main()

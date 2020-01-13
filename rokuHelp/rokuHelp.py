@@ -11,6 +11,9 @@ class slingChannels(unittest.TestCase):
 
     def tearDown(self):
         self.driver.close()
+        print("")
+        print("Tear down")
+
 
     def test_slingChannels(self):
         self.driver.get("https://help.sling.com/")
@@ -31,7 +34,7 @@ class slingChannels(unittest.TestCase):
 
         for item in elements:
 
-            print(item.text)
+            print(" - ", item.text)
 
 if __name__ == '__main__':
     unittest.main()

@@ -10,6 +10,8 @@ class challenge2(unittest.TestCase):
 
     def tearDown(self):
         self.driver.close()
+        print("")
+        print("Tear down")
 
     def test_challenge2(self):
         self.driver.get("https://www.copart.com/")
@@ -24,9 +26,7 @@ class challenge2(unittest.TestCase):
         self.driver.implicitly_wait(10)
         result = self.driver.find_element_by_xpath("// *[text() = 'PORSCHE']").text
 
-        assert (result == 'PORSCHE'), "PORSCHE not found."
-
-        print("PORSCHE listed.")
+        print("PORSCHE listed in exotics.")
 
 if __name__ == '__main__':
     unittest.main()
