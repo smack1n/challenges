@@ -1,13 +1,16 @@
 import unittest
 from fibonacci import fibonacci
 
-def test_challenge4(fibonacci):
+class challenge4(unittest.TestCase):
 
-    n = 10
+    def test_challenge4(self):
 
-    fibonacci(n)
+        i = 3
 
-    print(n)
+        while i < 20:
+            n = fibonacci(i)
+            print(n)
+            i += 1
 
 if __name__ == '__main__':
     unittest.main()
