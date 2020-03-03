@@ -1,5 +1,7 @@
 import unittest
 from fibonacci import fibonacci
+import n2w
+
 
 class challenge4(unittest.TestCase):
 
@@ -8,8 +10,11 @@ class challenge4(unittest.TestCase):
         i = 3
 
         while i < 20:
-            n = fibonacci(i)
-            print(n)
+            num = fibonacci(i)
+            print(num)
+
+            print(n2w.convert(num))
+
             i += 1
 
 if __name__ == '__main__':
