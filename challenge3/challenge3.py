@@ -10,12 +10,11 @@ class challenge3(unittest.TestCase):
 
     def tearDown(self):
         self.driver.close()
-        print("")
         print("Tear down")
 
     def test_challenge3(self):
         self.driver.get("https://www.copart.com/")
-        self.assertIn("Copart", self.driver.title)
+        self.assertIn("Auto Auction - Copart USA - Salvage Cars for Sale in Online Car Auctions", self.driver.title)
 
         elements = self.driver.find_elements(By.XPATH, "//*[@id=\"tabTrending\"]/div[1]//a")
 
