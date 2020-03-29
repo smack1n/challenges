@@ -19,10 +19,12 @@ class challenge3(unittest.TestCase):
 
         elements = self.driver.find_elements(By.XPATH, "//*[@id=\"tabTrending\"]/div[1]//a")
 
-        print(len(elements))
+        print(len(elements), "\n")
 
-        #for item in elements:
-         #   print(item.text + " - " + item.get_attribute("href"))
+        for item in elements:
+            print(item.text + " - " + item.get_attribute("href"))
+
+        print("\n\n\n")
 
         i = 0
         while i < len(elements):

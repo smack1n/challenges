@@ -10,7 +10,6 @@ class challenge2(unittest.TestCase):
 
     def tearDown(self):
         self.driver.close()
-        print("")
         print("Tear down")
 
     def test_challenge2(self):
@@ -22,11 +21,11 @@ class challenge2(unittest.TestCase):
 
         self.driver.find_element_by_xpath("//div[2]/button").click()
         self.driver.find_element_by_xpath("//div[2]/button").send_keys(Keys.RETURN)
-
+        assert "No results available" not in self.driver.page_source
         self.driver.implicitly_wait(10)
-        result = self.driver.find_element_by_xpath("// *[text() = 'PORSCHE']").text
 
-        print("PORSCHE listed in exotics.")
+        car = self.driver.find_element_by_xpath("// *[text() = 'PORSCHE']").text
+        assert (car == "Porsche"), print("Porsche available")
 
 if __name__ == '__main__':
     unittest.main()
