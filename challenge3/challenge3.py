@@ -18,6 +18,7 @@ class challenge3(unittest.TestCase):
 
         elements = self.driver.find_elements(By.XPATH, "//*[@id=\"tabTrending\"]/div[1]//a")
 
+        print("Number of models: ")
         print(len(elements), "\n")
 
         for item in elements:
