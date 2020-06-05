@@ -13,7 +13,7 @@ class challenge5(unittest.TestCase):
     def test_checkForModel(self):
         self.driver.get("https://www.copart.com/")
         self.assertIn("Auto Auction - Copart USA - Salvage Cars for Sale in Online Car Auctions", self.driver.title)
-        self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(10)
 
         query = "Porsche"
         TopNavSearch(self.driver).runSearch(query)
@@ -22,7 +22,7 @@ class challenge5(unittest.TestCase):
         self.driver.implicitly_wait(5)
         self.driver.find_element(By.XPATH, "//option[@value='100']").click()
         self.driver.implicitly_wait(10)
-        time.sleep(3)
+        time.sleep(30)
 
         all_models = self.driver.find_elements(By.XPATH, "//table[@id='serverSideDataTable']//span[@data-uname='lotsearchLotmodel']")
 
