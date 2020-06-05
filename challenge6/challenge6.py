@@ -18,7 +18,7 @@ class challenge6(unittest.TestCase):
 
         query = "Nissan"
         #input_model = "MAXIMA 3.5"
-        input_model = "GT-R BASE"
+        input_model = "SKYLINE"
         TopNavSearch(self.driver).runSearch(query)
 
         WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.XPATH, "//table[@id='serverSideDataTable']//a[@data-uname='lotsearchLotnumber']")))
