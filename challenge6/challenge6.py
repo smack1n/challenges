@@ -17,8 +17,8 @@ class challenge6(unittest.TestCase):
         self.driver.implicitly_wait(10)
 
         query = "Nissan"
-        #input_model = "MAXIMA 3.5"
-        input_model = "SKYLINE"
+        input_model = "MAXIMA 3.5"
+        #input_model = "SKYLINE"
         TopNavSearch(self.driver).runSearch(query)
 
         WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.XPATH, "//table[@id='serverSideDataTable']//a[@data-uname='lotsearchLotnumber']")))
@@ -31,7 +31,8 @@ class challenge6(unittest.TestCase):
         for model in models:
             model_list.append(model.text)
 
-        print(model_list)
+            print(model.text)
+
 
         try:
             position = model_list.index(input_model)
