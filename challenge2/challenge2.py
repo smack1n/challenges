@@ -21,11 +21,15 @@ class challenge2(unittest.TestCase):
 
         self.driver.find_element_by_xpath("//div[2]/button").click()
         self.driver.find_element_by_xpath("//div[2]/button").send_keys(Keys.RETURN)
+
         assert "No results available" not in self.driver.page_source
-        self.driver.implicitly_wait(10)
+
+        self.driver.implicitly_wait(15)
 
         car = self.driver.find_element_by_xpath("// *[text() = 'PORSCHE']").text
-        assert (car == "Porsche"), print("Porsche available")
+
+        assert (car == 'PORSCHE')
+        print("PORSCHE is in list of cars.")
 
 if __name__ == '__main__':
     unittest.main()

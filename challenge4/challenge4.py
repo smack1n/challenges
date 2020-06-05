@@ -1,6 +1,8 @@
 import unittest
-from fibonacci import fibonacci
-import n2w #Really struggled to create my own function
+from common.fibonacci import fibonacci
+import n2w
+
+# Really struggled to create my own function so I had to import n2w
 
 
 class challenge4(unittest.TestCase):
@@ -11,9 +13,7 @@ class challenge4(unittest.TestCase):
 
         while i < 20:
             num = fibonacci(i)
-            print(num)
-
-            print(n2w.convert(num))
+            print(str(num), " - ", (n2w.convert(num)))
 
             i += 1
 
