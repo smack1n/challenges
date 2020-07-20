@@ -67,16 +67,6 @@ class challenge5(unittest.TestCase):
 
             print("There are " + str(uniquemodeldict[unique_model]) + " " + unique_model + " on the page.")
 
-    # Switch Statement
-    def switch(self):
-        switcher = {
-            0: " This is Case Zero ",
-            1: " This is Case One ",
-            2: " This is Case Two ",
-        }
-        return switcher.get(self, "nothing")
-
-
 
     def tearDown(self):
         self.driver.close()
