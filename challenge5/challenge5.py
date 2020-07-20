@@ -26,7 +26,17 @@ class challenge5(unittest.TestCase):
 
         all_models = self.driver.find_elements(By.XPATH, "//table[@id='serverSideDataTable']//span[@data-uname='lotsearchLotmodel']")
 
-        print("\n" + "Total unique models:" + "\n")
+        models_damage = self.driver.find_elements(By.XPATH, "//table[@id='serverSideDataTable']//span[@data-uname='lotsearchLotdamagedescription']")
+
+        print(len(models_damage))
+
+        damagetype = []
+        for damage in models_damage:
+            damagetype.append(damage.text)
+
+        #print(damagetype)
+
+        print("\n" + "Total Models:" + "\n")
 
         print(len(all_models))
 
@@ -56,6 +66,17 @@ class challenge5(unittest.TestCase):
                     uniquemodeldict[unique_model] += 1
 
             print("There are " + str(uniquemodeldict[unique_model]) + " " + unique_model + " on the page.")
+
+    # Switch Statement
+    def switch(self):
+        switcher = {
+            0: " This is Case Zero ",
+            1: " This is Case One ",
+            2: " This is Case Two ",
+        }
+        return switcher.get(self, "nothing")
+
+
 
     def tearDown(self):
         self.driver.close()
